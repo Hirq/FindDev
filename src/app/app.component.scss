@@ -1,0 +1,157 @@
+$form-bg: #13232f;
+$white: #ffffff;
+$main: #1ab175;
+$main-dark: darken($main,5%);
+$gray-light: #a0b3b0;
+$br: 4px;
+
+mat-drawer-container{
+    min-height: 100%;
+}
+
+//MENU
+//*1  WORKER / COMPANY
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    }
+    
+    .form {
+    font-family: 'Titillium Web', sans-serif;
+    background:rgba($form-bg,.9);
+    max-width:600px;
+    border-radius:$br;
+    box-shadow:0 4px 10px 4px rgba($form-bg,.3);
+    }
+    
+    .tab-group {
+    list-style:none;
+    padding:0;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    li a {
+        display:block;
+        text-decoration:none;
+        padding: 10px 0px 10px 0px;
+        background:rgba($gray-light,.25);
+        color:$gray-light;
+        font-size:12px;
+        float:left;
+        width:50%;
+        text-align:center;
+        cursor:pointer;
+        transition:.5s ease;
+        &:hover {
+        background:$main-dark;
+        color:$white;
+        }
+    }
+    .active a {
+        background:$main;
+        color:$white;
+    }
+}
+
+//*2  USER MENU
+
+
+.popup{
+    background: #1ab175;
+    font-size: 8px;
+}
+
+
+
+#menu{
+    font-family: 'Titillium Web', sans-serif;
+    padding: 2px;
+    text-align: center;
+
+    .popupButton{
+        border-color: #0000CD;
+    }
+    mat-icon{
+        font-size:40px;
+
+    }
+}
+
+#expand {
+    min-height: 100px;
+    width: 100%;
+    margin-top:5px;
+    border-radius: 15px;
+  }
+
+
+//LIST
+
+#lista{
+    padding: 0px;
+    padding: 0;
+    mat-list{
+        mat-list-item{
+            margin-bottom: 5px;
+            div.mat-list-item-content{
+                padding: 0!important;
+                a{
+                    button{
+                        min-width: 80px;
+                        width: 130px;
+                        min-height: 40px;
+                        margin: 0px;
+                        mat-icon{
+                            float: right;
+                            font-size: 36px
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#buttonListItem{
+    width: 100%;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+  
+#aListItem{
+    width: 100%;
+}
+
+#buttonListItem:hover{
+background-color:rgb(35, 9, 78);
+color:aqua;
+}
+
+#buttonListItem:focus{
+background-color:rgb(35, 9, 78);
+color:aqua;
+}
+
+
+//Navbar TOP
+#topbar{
+    margin-bottom: 10px;
+}
+
+#collapseExpandButton:hover{
+    background-color:rgb(35, 9, 78);
+    color:aqua;
+}
+///////
+
+
+
+  
+
+  

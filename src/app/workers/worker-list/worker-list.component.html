@@ -1,0 +1,417 @@
+<mat-card id="sort">
+  <mat-form-field class="filter">
+    <mat-label>City</mat-label>
+    <mat-select [(ngModel)]="selectedValueCity">
+      <mat-option value="All">All</mat-option>
+      <mat-option *ngFor="let worker of workers$ | async" [value]="worker.city">{{worker.city}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="filter">
+    <mat-label>Level</mat-label>
+    <mat-select [(ngModel)]="selectedValueLevel">
+      <mat-option value="All">All</mat-option>
+      <mat-option *ngFor="let level of levels" [value]="level.value">{{level.viewValue}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="filter">
+    <mat-label>Remote</mat-label>
+    <mat-select [(ngModel)]="selectedValueRemote">
+      <mat-option value="All">All</mat-option>
+      <mat-option  *ngFor="let remote of remotes" [value]="remote.value">{{remote.viewValue}}</mat-option>
+    </mat-select>
+  </mat-form-field>                
+</mat-card>
+
+<mat-card>
+  <div *ngFor="let worker of workers$ | async">
+    <div *ngIf="selectedValueCity === 'All'  && selectedValueLevel === 'All' && selectedValueRemote ==='All' ; else first">
+      <div class="card">
+        <div id="level">
+          <div id="viewLevel">
+            {{worker.level}}
+          </div>
+        </div>  
+        <div class="header_card">
+          {{worker.first_name}} {{worker.last_name}}
+          <div id="remote">
+            <div id="viewRemote" *ngIf="worker.remote === 'Yes' ; else NotRemote">
+            Remote
+            </div>
+          </div>
+        </div>
+        <div class="content_card">
+          <div id="github">
+          <div id="position">
+            {{worker.position}}
+          </div>
+            <a href="{{worker.github}}"><i class="fab fa-github"></i></a>
+            <a href="{{worker.linkedin}}" style="padding-left:5px;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer_card">
+          <div id="city">
+            {{worker.city}}
+          </div>
+          <div id="salary">
+            {{worker.salary}} PLN
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #first>
+      <ng-container *ngIf="selectedValueCity === 'All' && selectedValueLevel === 'All' && selectedValueRemote === worker.remote ; else second">
+      <div class="card">
+        <div id="level">
+          <div id="viewLevel">
+            {{worker.level}}
+          </div>
+        </div>  
+        <div class="header_card">
+          {{worker.first_name}} {{worker.last_name}}
+          <div id="remote">
+            <div id="viewRemote" *ngIf="worker.remote === 'Yes' ; else NotRemote">
+            Remote
+            </div>
+          </div>
+        </div>
+        <div class="content_card">
+          <div id="github">
+          <div id="position">
+            {{worker.position}}
+          </div>
+            <a href="{{worker.github}}"><i class="fab fa-github"></i></a>
+            <a href="{{worker.linkedin}}" style="padding-left:5px;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer_card">
+          <div id="city">
+            {{worker.city}}
+          </div>
+          <div id="salary">
+            {{worker.salary}} PLN
+          </div>
+        </div>
+      </div>
+      </ng-container>
+    </ng-template>
+
+    <ng-template #second>
+      <ng-container *ngIf="selectedValueCity === 'All' && selectedValueLevel === worker.level && selectedValueRemote === 'All'  ; else third">
+      <div class="card">
+        <div id="level">
+          <div id="viewLevel">
+            {{worker.level}}
+          </div>
+        </div>  
+        <div class="header_card">
+          {{worker.first_name}} {{worker.last_name}}
+          <div id="remote">
+            <div id="viewRemote" *ngIf="worker.remote === 'Yes' ; else NotRemote">
+            Remote
+            </div>
+          </div>
+        </div>
+        <div class="content_card">
+          <div id="github">
+          <div id="position">
+            {{worker.position}}
+          </div>
+            <a href="{{worker.github}}"><i class="fab fa-github"></i></a>
+            <a href="{{worker.linkedin}}" style="padding-left:5px;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer_card">
+          <div id="city">
+            {{worker.city}}
+          </div>
+          <div id="salary">
+            {{worker.salary}} PLN
+          </div>
+        </div>
+      </div>
+      </ng-container>
+    </ng-template>
+
+    <ng-template #third>
+      <ng-container *ngIf="selectedValueCity === 'All' && selectedValueLevel === worker.level && selectedValueRemote === worker.remote ; else four">
+      <div class="card">
+        <div id="level">
+          <div id="viewLevel">
+            {{worker.level}}
+          </div>
+        </div>  
+        <div class="header_card">
+          {{worker.first_name}} {{worker.last_name}}
+          <div id="remote">
+            <div id="viewRemote" *ngIf="worker.remote === 'Yes' ; else NotRemote">
+            Remote
+            </div>
+          </div>
+        </div>
+        <div class="content_card">
+          <div id="github">
+          <div id="position">
+            {{worker.position}}
+          </div>
+            <a href="{{worker.github}}"><i class="fab fa-github"></i></a>
+            <a href="{{worker.linkedin}}" style="padding-left:5px;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer_card">
+          <div id="city">
+            {{worker.city}}
+          </div>
+          <div id="salary">
+            {{worker.salary}} PLN
+          </div>
+        </div>
+      </div>
+      </ng-container>
+    </ng-template>
+    
+    <ng-template #four>
+      <ng-container *ngIf="selectedValueCity === worker.city && selectedValueLevel === 'All' && selectedValueRemote === 'All' ; else five">
+      <div class="card">
+        <div id="level">
+          <div id="viewLevel">
+            {{worker.level}}
+          </div>
+        </div>  
+        <div class="header_card">
+          {{worker.first_name}} {{worker.last_name}}
+          <div id="remote">
+            <div id="viewRemote" *ngIf="worker.remote === 'Yes' ; else NotRemote">
+            Remote
+            </div>
+          </div>
+        </div>
+        <div class="content_card">
+          <div id="github">
+          <div id="position">
+            {{worker.position}}
+          </div>
+            <a href="{{worker.github}}"><i class="fab fa-github"></i></a>
+            <a href="{{worker.linkedin}}" style="padding-left:5px;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer_card">
+          <div id="city">
+            {{worker.city}}
+          </div>
+          <div id="salary">
+            {{worker.salary}} PLN
+          </div>
+        </div>
+      </div>
+      </ng-container>
+    </ng-template>
+
+    <ng-template #five>
+      <ng-container *ngIf="selectedValueCity === worker.city && selectedValueLevel === 'All' && selectedValueRemote === worker.remote  ; else six">
+      <div class="card">
+        <div id="level">
+          <div id="viewLevel">
+            {{worker.level}}
+          </div>
+        </div>  
+        <div class="header_card">
+          {{worker.first_name}} {{worker.last_name}}
+          <div id="remote">
+            <div id="viewRemote" *ngIf="worker.remote === 'Yes' ; else NotRemote">
+            Remote
+            </div>
+          </div>
+        </div>
+        <div class="content_card">
+          <div id="github">
+          <div id="position">
+            {{worker.position}}
+          </div>
+            <a href="{{worker.github}}"><i class="fab fa-github"></i></a>
+            <a href="{{worker.linkedin}}" style="padding-left:5px;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer_card">
+          <div id="city">
+            {{worker.city}}
+          </div>
+          <div id="salary">
+            {{worker.salary}} PLN
+          </div>
+        </div>
+      </div>
+      </ng-container>
+    </ng-template>
+
+    <ng-template #six>
+      <ng-container *ngIf="selectedValueCity === worker.city && selectedValueLevel === worker.level && selectedValueRemote === 'All'  ; else seven">
+      <div class="card">
+        <div id="level">
+          <div id="viewLevel">
+            {{worker.level}}
+          </div>
+        </div>  
+        <div class="header_card">
+          {{worker.first_name}} {{worker.last_name}}
+          <div id="remote">
+            <div id="viewRemote" *ngIf="worker.remote === 'Yes' ; else NotRemote">
+            Remote
+            </div>
+          </div>
+        </div>
+        <div class="content_card">
+          <div id="github">
+          <div id="position">
+            {{worker.position}}
+          </div>
+            <a href="{{worker.github}}"><i class="fab fa-github"></i></a>
+            <a href="{{worker.linkedin}}" style="padding-left:5px;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer_card">
+          <div id="city">
+            {{worker.city}}
+          </div>
+          <div id="salary">
+            {{worker.salary}} PLN
+          </div>
+        </div>
+      </div>
+      </ng-container>
+    </ng-template>
+
+    <ng-template #seven>
+      <ng-container *ngIf="worker.city === selectedValueCity && worker.level === selectedValueLevel && selectedValueRemote === worker.remote">
+      <div class="card">
+        <div id="level">
+          <div id="viewLevel">
+            {{worker.level}}
+          </div>
+        </div>  
+        <div class="header_card">
+          {{worker.first_name}} {{worker.last_name}}
+          <div id="remote">
+            <div id="viewRemote" *ngIf="worker.remote === 'Yes' ; else NotRemote">
+            Remote
+            </div>
+          </div>
+        </div>
+        <div class="content_card">
+          <div id="github">
+          <div id="position">
+            {{worker.position}}
+          </div>
+            <a href="{{worker.github}}"><i class="fab fa-github"></i></a>
+            <a href="{{worker.linkedin}}" style="padding-left:5px;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer_card">
+          <div id="city">
+            {{worker.city}}
+          </div>
+          <div id="salary">
+            {{worker.salary}} PLN
+          </div>
+        </div>
+      </div>
+      </ng-container>
+    </ng-template>
+  </div>
+</mat-card>
+
+
+<div id="separator">
+  STARA TABELA PONIŻEJ
+</div>
+
+
+ <div class="example-container mat-elevation-z8">
+
+  <table mat-table [dataSource]="workers$" matSort class="mat-elevation-z8">
+
+
+    <!-- First_name Column -->
+    <ng-container matColumnDef="first_name">
+      <th mat-header-cell *matHeaderCellDef> First Name</th>
+      <td mat-cell *matCellDef="let worker"> {{worker.first_name}} </td>
+
+    </ng-container>
+
+    <!-- Last_name Column -->
+    <ng-container matColumnDef="last_name">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <td mat-cell *matCellDef="let worker"> {{worker.last_name}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> Position </th>
+      <td mat-cell *matCellDef="let worker"> {{worker.position}} </td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let worker"> {{worker.email}} </td>
+    </ng-container>
+
+    <!-- City Column -->
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let worker"> {{worker.city}} </td>
+    </ng-container>
+
+    <!-- Github Column -->
+    <ng-container matColumnDef="github">
+      <th mat-header-cell *matHeaderCellDef> Github </th>
+      <td mat-cell *matCellDef="let worker"> {{worker.github}} </td>
+    </ng-container> 
+
+    <!-- Linkedin Column -->
+    <ng-container matColumnDef="linkedin">
+      <th mat-header-cell *matHeaderCellDef> Linkedin </th>
+      <td mat-cell *matCellDef="let worker"> {{worker.linkedin}} </td>
+    </ng-container> 
+
+    <!-- Level Column -->
+    <ng-container matColumnDef="level">
+      <th mat-header-cell *matHeaderCellDef> Level </th>
+      <td mat-cell *matCellDef="let worker"> {{worker.level}} </td>
+    </ng-container>    
+
+    <!-- Salary Column -->
+    <ng-container matColumnDef="salary">
+      <th mat-header-cell *matHeaderCellDef> Salary </th>
+      <td mat-cell *matCellDef="let worker"> {{worker.salary}} </td>
+    </ng-container>    
+
+    <!-- Describe Column -->
+    <ng-container matColumnDef="describe">
+      <th mat-header-cell *matHeaderCellDef> Describe </th>
+      <td mat-cell *matCellDef="let worker"> {{worker.describe}} </td>
+    </ng-container>
+
+    <!-- Remote Column -->
+    <ng-container matColumnDef="remote">
+      <th mat-header-cell *matHeaderCellDef> Remote </th>
+      <td mat-cell *matCellDef="let worker"> {{worker.remote}} </td> 
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> actions </th>
+      <td mat-cell *matCellDef="let worker"> 
+        <a (click)=editWorker(worker)>edit</a><br>
+         
+        <a (click)=deleteWorker(worker)>delete</a> 
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+  </table>
+  
+</div> 

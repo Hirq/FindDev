@@ -1,0 +1,66 @@
+<mat-card>
+  <mat-card-title>Add Worker</mat-card-title>
+  <mat-card-content>
+    <form class="form-inline mb-4">
+      <form [formGroup]="workerForm" (submit)="createWorker()" class="form-inline mb-4">
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="First Name" formControlName="first_name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Last Name" formControlName="last_name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Position" formControlName="position">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" formControlName="email">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="City" formControlName="city">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Github"  formControlName="github">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="LinkedIn"  formControlName="linkedin">
+            </mat-form-field>            
+            <mat-form-field>
+              <mat-label>Level</mat-label>
+              <mat-select formControlName="level">
+                <mat-option *ngFor="let level of levels" [value]="level.value">
+                  {{level.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Remote</mat-label>
+              <mat-select formControlName="remote">
+                <mat-option *ngFor="let remote of remotes" [value]="remote.value">
+                  {{remote.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field >
+              <input matInput placeholder="Salary"  formControlName="salary">
+            </mat-form-field>
+
+          </div>
+          <div class="col">
+            <mat-form-field class="example-full-width" >
+              <textarea matInput placeholder="Describe" id="describe" formControlName="describe"></textarea>
+            </mat-form-field>
+            CV
+            <input type="file" name="cv" (change)="onFileChange($event)" />
+          </div>
+        </div>
+            <button mat-raised-button color="primary" type="submit" id="addButton">Add Worker</button>
+
+      </form>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+

@@ -1,0 +1,19 @@
+mat-card {
+    margin: 50px auto 0 auto;
+    padding-top: 45px;
+    width: 400px;
+    height: 430px;
+
+    mat-card-title {
+        font-weight: 600;
+        text-align: center;
+        color: #3F51B5;
+    }
+
+    mat-card-content {
+        mat-form-field {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+    }
+}

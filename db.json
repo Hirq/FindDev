@@ -1,0 +1,59 @@
+{
+  "workers": [
+    {
+      "first_name": "Czaru",
+      "last_name": "Zab",
+      "email": "aqw@wp.pl",
+      "city": "Koszalin",
+      "github": "hirq@github.com",
+      "level": "Junior",
+      "describe": "Python Developer",
+      "remote": "No",
+      "salary": "2500",
+      "linkedin": "xxxxxx",
+      "id": 1
+    },
+    {
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "city": "",
+      "github": "",
+      "level": "",
+      "describe": "",
+      "remote": "No",
+      "salary": "",
+      "linkedin": "",
+      "position": "asdads222",
+      "id": 2
+    },
+    {
+      "first_name": "Imie",
+      "last_name": "Naziwsko",
+      "email": "awer@wp.pl",
+      "city": "Koszalin",
+      "github": "gggitt@git.jhub",
+      "level": "Junior",
+      "describe": "opis",
+      "remote": "Yes",
+      "salary": "3000",
+      "linkedin": "addas",
+      "position": "Python Developer, FrontEnd Developer",
+      "id": 3
+    },
+    {
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "city": "",
+      "github": "https://github.com/hirq",
+      "level": "Junior",
+      "describe": "",
+      "remote": "No",
+      "salary": "",
+      "linkedin": "",
+      "position": "",
+      "id": 4
+    }
+  ]
+}

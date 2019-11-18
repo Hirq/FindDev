@@ -1,0 +1,57 @@
+body {
+    height: 100%;
+    background-color: rgb(22, 5, 44);
+}
+
+
+  .grid2x2 {
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .grid2x2 > div {
+    display: flex; 
+    flex-basis: calc(50% - 40px);  
+    justify-content: center;
+    flex-direction: column;
+  }
+  .grid2x2 > div > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .box { margin: 20px; }
+  .box1 { background-color: rgb(22, 5, 44); color: wheat}
+  .box2 { background-color: rgb(22, 5, 44); color: wheat}
+  .box3 { background-color: rgb(22, 5, 44); color: wheat}
+  .box4 { background-color: rgb(22, 5, 44); color: wheat}
+  
+  .boxin {
+      height: 100%;
+  }
+
+  .btn.btn-primary {
+      min-width: 100%;
+      text-align: center;
+      padding: 15%;
+  }
+
+  .btn.btn-warning {
+    min-width: 100%;
+    text-align: center;
+    padding: 15%;
+  }
+
+  .btn.btn-danger {
+    min-width: 100%;
+    text-align: center;
+    padding: 15%;
+  }
+  
+  .btn.btn-success {
+    min-width: 100%;
+    text-align: center;
+    padding: 15%;
+  }

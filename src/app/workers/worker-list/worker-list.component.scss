@@ -1,0 +1,93 @@
+#sort{
+  text-align: center;
+  margin: 10px;
+  .filter {
+    min-width: 100px;
+    max-width: 250px;
+    width: 100%;
+    margin-top: 30px;
+    padding-right: 10px;
+  }
+}
+
+.example-container {
+  height: 400px;
+  overflow: auto;
+}
+  
+table {
+  width: 100%;
+}
+
+.card {
+  display: block;
+  position: relative;
+  width: 90%;
+  height: 140px;
+  border: 1px solid rgb(2, 53, 73);
+  -webkit-border-radius: 4px; 
+  -moz-border-radius: 4px;   
+  border-radius: 4px;
+  background-color:#fff;
+  margin: 16px auto;
+  padding: 5px 15px 0px 15px;
+
+  .header_card{
+    font-size: 30px;
+    text-align: center;
+
+  }
+  #remote{
+    font-size: 15px;
+    float: right;
+    #viewRemote{
+      color: #f50404
+    }
+  }
+  #level{
+    font-size: 15px;
+    float: left;
+    #viewLevel{
+      color: green;
+    }
+  }
+  .content_card{
+
+    font-size: 20px;
+
+    #github{
+      text-align: center;
+    }
+
+    #position{
+      color:blue;
+    }
+  }
+  .footer_card{
+    font-size: 17px;
+
+    #salary{
+      float: left;
+      bottom: 0;
+      position:absolute;
+
+    }
+    #city{
+      bottom: 0;
+      position:absolute;
+      right: 0;
+      padding-right: 10px;
+    }
+  }
+}
+
+#separator{
+  width: 100%;
+  height: 200px;
+  background-color: green;
+  color: #f50404;
+  font-size: 80px;
+  margin-top: 140px;
+  text-align: center;
+  margin-bottom: 10px;
+}
