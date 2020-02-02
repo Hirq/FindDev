@@ -31,7 +31,7 @@ export const initialState = workerAdapter.getInitialState(defaultWorker);
 
 export function workerReducer(
   state = initialState,
-  action: workerActions.Action
+  action: workerActions.MyAction
 ): WorkerState {
   switch(action.type) {
 

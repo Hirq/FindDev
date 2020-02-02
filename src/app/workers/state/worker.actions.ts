@@ -109,7 +109,7 @@ export class DeleteWorkerFail implements Action {
     constructor(public payload: string) {}
 }
 
-export type Action = 
+export type MyAction = 
 | LoadWorkers 
 | LoadWorkersSuccess 
 | LoadWorkersFail

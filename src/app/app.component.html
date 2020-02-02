@@ -1,29 +1,12 @@
 <mat-drawer-container class="example-container" [hasBackdrop]="False">
   <mat-drawer #drawer mode="side" >
     <mat-card id="menu">
-    <div class="form">
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Worker</a></li>
-        <li class="tab"><a href="#login">Company</a></li>
-      </ul>
-    </div> 
-    <button mat-stroked-button color="primary"
-        (click)="toggleCollapted()"
-        matTooltip="User menu"
-        matTooltipPosition="right"
-        matTooltipClass="popup"
-        class="popupButton">
-            Wuja222
-    </button>
-
-        <div *ngIf="!isCollapted">
-          <div id="expand">
-            <a href="/login" ><button mat-raised-button color="primary" id="login">Login</button></a>
-            <a href="/settings"> <mat-icon matBadge="15" matBadgeColor="warn">email</mat-icon></a>
-            <a href="/settings"> <mat-icon>settings_applications</mat-icon></a>
-          </div>
-        </div>
-
+      <a href="/settings"> 
+        <button mat-stroked-button color="primary"
+          class="popupButton">
+              Username
+        </button>
+    </a>
     </mat-card>
     <mat-card id="lista">
       <mat-list role="list">
@@ -38,6 +21,7 @@
     <mat-card id="topbar">
       <button mat-raised-button color="primary" (click)="drawer.toggle()" id="collapseExpandButton"><mat-icon>more_vert</mat-icon></button>
       <a href="/"><button mat-button>DevFind.it</button></a> 
+      <a href="/login" ><button mat-raised-button color="primary" id="login">Login</button></a>
     </mat-card>
 
     <router-outlet></router-outlet>

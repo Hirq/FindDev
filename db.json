@@ -1,19 +1,6 @@
 {
   "workers": [
     {
-      "first_name": "Czaru",
-      "last_name": "Zab",
-      "email": "aqw@wp.pl",
-      "city": "Koszalin",
-      "github": "hirq@github.com",
-      "level": "Junior",
-      "describe": "Python Developer",
-      "remote": "No",
-      "salary": "2500",
-      "linkedin": "xxxxxx",
-      "id": 1
-    },
-    {
       "first_name": "",
       "last_name": "",
       "email": "",
