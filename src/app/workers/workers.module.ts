@@ -13,6 +13,8 @@ import { WorkerComponent } from './worker/worker.component';
 import { WorkerAddComponent } from './worker-add/worker-add.component';
 import { WorkerEditComponent } from './worker-edit/worker-edit.component';
 import { WorkerListComponent } from './worker-list/worker-list.component';
+import { WorkerListNewComponent } from './worker-list-new/worker-list-new.component';
+import { WorkerViewComponent } from './worker-view/worker-view.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -22,19 +24,18 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 
-
-
-
 const workerRoutes: Routes = [
   { path: "", component: WorkerComponent },
   { path: "list", component: WorkerListComponent },
   { path: "add", component: WorkerAddComponent },
   { path: "edit", component: WorkerEditComponent },
+  { path: "newlist", component: WorkerListNewComponent },
+  { path: "view", component: WorkerViewComponent }
 
 ]
 
 @NgModule({
-  declarations: [WorkerComponent, WorkerAddComponent, WorkerEditComponent, WorkerListComponent],
+  declarations: [WorkerComponent, WorkerAddComponent, WorkerEditComponent, WorkerListComponent, WorkerListNewComponent, WorkerViewComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(workerRoutes),
@@ -51,6 +52,9 @@ const workerRoutes: Routes = [
     MatCheckboxModule,
     MatButtonModule,
     MatTableModule,
+    
+
+
   ]
 })
 export class WorkersModule { }
