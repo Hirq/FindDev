@@ -1,4 +1,6 @@
 <mat-card>
+  <div *ngFor="let worker of workers$ | async">
+
   <div class="center">
     <a href="/view">
       <div class="card">
@@ -6,10 +8,10 @@
         <div class="additional">
           <div class="user-card">
             <div class="level center">
-              Junior
+              {{worker.level}}
             </div>
             <div class="points center">
-              2500 PLN
+              {{worker.salary}} PLN
             </div>
     
             <svg width="110" height="110" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" class="center">
@@ -72,22 +74,22 @@
     
           </div>
           <div class="more-info">
-            <h1>Jane Doe       </h1>
+            <h1> {{worker.first_name}} {{worker.last_name}} </h1>
             <div class="coords">
               <span>Email</span>
-              <span>testtest@gmail.com</span>
+              <span>{{worker.email}}</span>
             </div>
             <div class="coords">
               <span>City</span>
-              <span>Koszalin</span>
+              <span>{{worker.city}}</span>
             </div>
             <div class="coords">
               <span>Github</span>
-              <a href="/git"><span>Link</span></a>
+              <a href="{{worker.github}}"><i class="fab fa-github"></i></a>
             </div>
             <div class="coords">
               <span>Linkedin</span>
-              <a href="/lin"><span>Link</span></a>
+              <a href="{{worker.linkedin}}" style="padding-left:5px;"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <div class="coords">
               <span>Portfolio</span>
@@ -101,15 +103,21 @@
                 <div style="border-color: transparent;">
                 </div>
               <div>
-                <div class="title">Check</div>
+                <div id="viewRemote" *ngIf="worker.remote === 'Yes' ; else NotRemote">
+                  <div class="title">Remote</div>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <ng-template #NotRemote>
+                  <div class="title">Remote</div>
                   <i class="fa fa-minus" aria-hidden="true"></i>
+                </ng-template>
               </div>
             </div>
           </div>
         </div>
         <div class="general">
-          <h1>Javascript Developer</h1>
-          <p>Szukam pracy związanej z frontendem. Stworzyłem kilka projektów przy użyciu języka Python korzystając z biblioteki Django. Dodatkowo zrobiłem 2 aplikacje wykorzystując ANgulara i REacta. </p>
+          <h1>{{worker.position}}</h1>
+          <p>{{worker.describe}} </p>
     
           <span class="more">Mouse over the card for more info</span>
       
@@ -121,7 +129,7 @@
     
     
     
-      <div class="card green">
+      <!-- <div class="card green">
         <div class="additional">
           <div class="user-card">
             <div class="level center">
@@ -174,6 +182,7 @@
           <span class="more">Mouse over the card for more info</span>
         </div>
       </div>
-    
+     -->
+  </div>
   </div>
 </mat-card>

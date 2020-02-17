@@ -58,7 +58,6 @@ export class WorkerListComponent implements OnInit {
 
   editWorker(worker: Worker) {
     this.store.dispatch(new workerActions.LoadWorker(worker.id));
+    window.location.href = "/edit/"+(worker.id);
   }
-
-
 }

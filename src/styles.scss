@@ -30,3 +30,18 @@ $finddev-theme: mat-light-theme($finddev-primary, $finddev-accent, $finddev-warn
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    --color-first: #22E1FF;
+    --color-second: #1D8FE1;
+    --color-third: #625EB1;
+  }
+  
+  body {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-sherif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  

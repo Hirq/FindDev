@@ -1,3 +1,63 @@
+<div *ngFor="let worker of workers$ | async">
+
+<div *ngIf="worker.id === 2" >
+
+
+<section class="hero">
+  <div class="content">
+      <h2>Joachim Prajt</h2>
+      <h4>Python Developer</h4>
+      <h2>{{worker.level}}</h2>
+      <h4>3000 PLN</h4>
+      </div>
+</section>
+
 <mat-card>
-    
+
+  <mat-grid-list cols="4" rowHeight="100px" > 
+    <mat-grid-tile id="gridtop"
+        [colspan]=4
+        [rowspan]=2>
+        <mat-grid-tile-header>
+          Tech
+        </mat-grid-tile-header>
+        dodac w modelu nowe zmienne
+        lata doświadczenia do wybrania M lub R
+        przekierowanie z listy do opowiedneigo gracza
+        i pozycje stad.
+    </mat-grid-tile>
+    <mat-grid-tile id="gridleft" [colspan]=2 [rowspan]=3>
+      <mat-grid-tile-header>
+        EXP 
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer>
+        <ul>
+          <li>3 lata doświadczenia komercyjnego</li>
+          <li>Studia techniczne</li>
+          
+        </ul>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile id="gridright"
+        [colspan]=2
+        [rowspan]=3>
+        Wymagania
+    </mat-grid-tile>
+    <mat-grid-tile id="gridbot"
+        [colspan]=4
+        [rowspan]=1>
+        Dodatkowe
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+  <div class="page-content">
+    <div class="content">
+      <div id="buttonApply">
+        <button mat-raised-button color="primary">Apply</button>
+      </div>
+      </div>
+  </div>
 </mat-card>
+</div>
+</div>
